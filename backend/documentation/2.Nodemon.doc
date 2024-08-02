@@ -3,3 +3,4 @@ aftre writing db.js and connecting it with index.js
 npm i -D nodemon
 
 nodemon .\index.js
+ 
