@@ -55,6 +55,7 @@ router.post('/login',[
         body('email','Enter a Valid Email').isEmail(),
         body('password','Password Cannot be Blank').exists(),
     ],  async(req, res)=>{
+        success = false;
                 // Error handeling, It returns Bad Request & Errors
                 const errors = validationResult(req);
                 if (!errors.isEmpty()) {
@@ -66,12 +67,14 @@ router.post('/login',[
                 try {
                     let user = await User.findOne({email});
                     if(!user){
-                        return res.status(400).json({error:"Entered Credentails are Wrong"});
+                        success = false;
+                        return res.status(400).json({success, error:"Entered Credentails are Wrong"});
                     }
 
                     const passwordCompare = await bcrypt.compare(password, user.password);
                     if(!passwordCompare){
-                        return res.status(400).json({error:"Entered Credentails are Wrong"})
+                        success = false;
+                        return res.status(400).json({success, error:"Entered Credentails are Wrong"})
                     }
 
                     const data = {
@@ -80,7 +83,8 @@ router.post('/login',[
                         }
                     }
                     const authToken = jwt.sign(data, JWT_SECRET);
-                    res.json({authToken})
+                    success = true;
+                    res.json({ success, authToken})
 
                 }
                 catch (error){
