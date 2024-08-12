@@ -44,7 +44,7 @@ make sure branch is gh-pages
 
 Now this is a working Link
 
-https://Mohit-Bairwa25.github.io/React-Notebook
+https://mohit-bairwa25.github.io/React-Notebook/
 
 If you're still encountering issues, you might need to clear your npm cache:
 npm cache clean --force
