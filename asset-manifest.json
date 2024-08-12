@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Notebook/static/css/main.87ab02da.css",
+    "main.js": "/React-Notebook/static/js/main.bc6be223.js",
+    "index.html": "/React-Notebook/index.html",
+    "main.87ab02da.css.map": "/React-Notebook/static/css/main.87ab02da.css.map",
+    "main.bc6be223.js.map": "/React-Notebook/static/js/main.bc6be223.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87ab02da.css",
+    "static/js/main.bc6be223.js"
+  ]
+}
